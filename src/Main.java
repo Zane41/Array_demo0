@@ -102,4 +102,25 @@ public class Main {
         }
         return mass;
     }
+    public static int searchX (int []m, int x){
+        int xNaiden = -1;
+        for (int i = 0; i < m.length; i++)
+            if (m[i]==x) xNaiden=i;
+        return xNaiden;
+    }
+    public static int searchClose (int []m, int x){
+        int xNaiden = 0;  int raznica1 = Math.abs(Math.abs(m[0]) - Math.abs(x));
+        for (int i = 1; i <m.length ; i++) {
+            int raznica2=Math.abs(Math.abs(m[i]) - Math.abs(x));
+            if (raznica1>=raznica2) {
+                raznica1=raznica2; xNaiden=i;
+            }
+        }
+        return xNaiden;
+    }
+    public static void reversType (int []m){
+        for (int i = m.length-1; i >=0 ; i--) {
+            System.out.print(m[i]+" ");
+        }
+    }
 }
