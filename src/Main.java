@@ -52,4 +52,54 @@ public class Main {
         readArray(m);
         return m;
     }
+    public static int summaElementov(int[] m) {
+        int sum = 0;
+        for (int i = 0; i < m.length; i++) {
+            sum = +m[i];
+        }
+        return sum;
+    }
+    public static int minZnac(int[]m){
+        int minZnac = m[0];
+        for (int i = 1; i <m.length ; i++) {
+            if (m[i] <= minZnac) minZnac = m[i];
+        }
+            return minZnac;
+    }
+    public static int maxZnac(int[]m){
+        int maxZnac = m[0];
+        for (int i = 1; i <m.length ; i++) {
+            if (m[i] >= maxZnac) maxZnac = m[i];
+        }
+        return maxZnac;
+    }
+    public  static  int nomerMax(int []m) {
+        int max = m[0], numberMax = 0;
+        for (int i = 1; i < m.length; i++) {
+            if (max < m[i]) {
+                max = m[i];
+                numberMax = i;
+            }
+        }
+        return numberMax;
+    }
+    public  static  int nomerMin(int []m) {
+        int min = m[0], numberMin = 0;
+        for (int i = 1; i < m.length; i++) {
+            if (min > m[i]) {
+                min = m[i];
+                numberMin = i;
+            }
+        }
+        return numberMin;
+    }
+    public static int[] zamenaMinMax(int []mass){
+        int imin= nomerMax(mass); int  imax=nomerMin(mass);
+        int min= minZnac(mass); int  max=maxZnac(mass);
+        for (int i = 0; i < mass.length; i++) {
+            if (i==imin) mass[i]=max;
+            if (i==imax) mass[i]=min;
+        }
+        return mass;
+    }
 }
