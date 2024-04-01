@@ -123,4 +123,21 @@ public class Main {
             System.out.print(m[i]+" ");
         }
     }
+    public static void printFromXToY (int []m, int x, int y) {
+        if (x > y)
+            for (int i = 0; i < m.length; i++) {
+                if (m[i] <= x && m[i] >= y)
+                    System.out.println(m[i] + " ");
+            }
+        if (x == y)
+                for (int i = 0; i < m.length; i++) {
+                    if (m[i] == x)
+                        System.out.println(m[i] + " ");
+                }
+        if (x<y)
+            for (int i = 0; i < m.length; i++) {
+                if (m[i] >= x && m[i] <= y)
+                    System.out.println(m[i] + " ");
+            }
+    }
 }
